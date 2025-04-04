@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // Prevent loading in an iframe
-        if (window.self !== window.top) {
-            window.top.location.href = "https://sites.google.com/view/thecorruptco/postpaymentpage";
-        } else {
-            // Open in a new tab
-            window.open("https://sites.google.com/view/thecorruptco/postpaymentpage", "_blank");
-            // Optional: Redirect in the same tab in case pop-ups are blocked
-            setTimeout(() => {
-                window.location.href = "https://sites.google.com/view/thecorruptco/postpaymentpage";
-            }, 500);
-        }
+        setTimeout(() => {
+            let newTab = window.open("https://sites.google.com/view/thecorruptco/postpaymentpage", "_blank");
+            if (!newTab) {
+                // If pop-up is blocked, show manual link
+                document.getElementById("manualRedirect").style.display = "block";
+            } else {
+                window.close(); // Close the current page if new tab is opened
+            }
+        }, 500);
     </script>
 </head>
 <body>
     <p>If you are not redirected automatically, <a href="https://sites.google.com/view/thecorruptco/postpaymentpage" target="_blank">click here</a>.</p>
+    <p id="manualRedirect" style="display: none; color: red;">Popup blocked! Click the link above to continue.</p>
 </body>
 </html>
