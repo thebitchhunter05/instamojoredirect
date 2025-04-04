@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        window.location.href = "https://sites.google.com/view/thecorruptco/postpaymentpage";
+        // Prevent loading in an iframe
+        if (window.self !== window.top) {
+            window.top.location.href = "https://sites.google.com/view/thecorruptco/postpaymentpage";
+        } else {
+            // Open in a new tab
+            window.open("https://sites.google.com/view/thecorruptco/postpaymentpage", "_blank");
+            // Optional: Redirect in the same tab in case pop-ups are blocked
+            setTimeout(() => {
+                window.location.href = "https://sites.google.com/view/thecorruptco/postpaymentpage";
+            }, 500);
+        }
     </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="https://sites.google.com/view/thecorruptco/postpaymentpage">click here</a>.</p>
+    <p>If you are not redirected automatically, <a href="https://sites.google.com/view/thecorruptco/postpaymentpage" target="_blank">click here</a>.</p>
 </body>
 </html>
