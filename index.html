@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <script>
-        function redirectToPage() {
-            // Open in new tab
-            let newTab = window.open("https://sites.google.com/view/thecorruptco/postpaymentpage", "_blank");
-
-            // If browser blocks pop-ups, show manual link
-            if (!newTab) {
-                document.getElementById("manualRedirect").style.display = "block";
-            } else {
-                window.close(); // Close current tab if possible
-            }
-        }
-
-        // Detect if running inside a WebView (Instagram, Facebook, etc.)
-        function isWebView() {
-            let userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            return /FBAN|FBAV|Instagram|Twitter|FB_IAB|FB_IAP/i.test(userAgent);
-        }
-
-        window.onload = function () {
-            if (isWebView()) {
-                alert("⚠️ Please open this page in Chrome or Safari for a smooth experience.");
-                window.location.href = "googlechrome://sites.google.com/view/thecorruptco/postpaymentpage"; // Try opening in Chrome
-            } else {
-                redirectToPage(); // Redirect normally
-            }
-        };
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirecting...</title>
+  <meta http-equiv="refresh" content="0; url=https://sites.google.com/view/thecorruptco/postpaymentpage" />
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="https://sites.google.com/view/thecorruptco/postpaymentpage">click here</a>.</p>
-    <p id="manualRedirect" style="display:none;">Click <a href="https://sites.google.com/view/thecorruptco/postpaymentpage">here</a> if the redirection doesn't work.</p>
+  <p>Redirecting... If you're not redirected automatically, <a href="https://sites.google.com/view/thecorruptco/postpaymentpage" target="_blank">click here</a>.</p>
 </body>
 </html>
